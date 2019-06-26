@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netcoreapp2.1;netcoreapp3.0</TargetFrameworks>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../App.Metrics.Abstractions/Rocket.Surgery.Extensions.App.Metrics.Abstractions.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Rocket.Surgery.Conventions" />
+    <PackageReference Include="Rocket.Surgery.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Include="App.Metrics" />
+    <PackageReference Include="App.Metrics.Abstractions" />
+    <PackageReference Include="App.Metrics.Core" />
+    <PackageReference Include="App.Metrics.Extensions.Configuration" />
+    <PackageReference Include="App.Metrics.Extensions.DependencyInjection" />
+    <PackageReference Include="App.Metrics.Extensions.HealthChecks" />
+    <PackageReference Include="App.Metrics.Extensions.Hosting" />
+    <PackageReference Include="App.Metrics.Health" />
+    <PackageReference Include="App.Metrics.Health.Core" />
+    <PackageReference Include="App.Metrics.Health.Extensions.Configuration" />
+    <PackageReference Include="App.Metrics.Health.Extensions.DependencyInjection" />
+    <PackageReference Include="App.Metrics.Health.Extensions.Hosting" />
+  </ItemGroup>
+</Project>
