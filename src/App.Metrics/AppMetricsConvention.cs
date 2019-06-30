@@ -10,6 +10,11 @@ using Rocket.Surgery.Extensions.DependencyInjection;
 
 namespace Rocket.Surgery.Extensions.App.Metrics
 {
+    /// <summary>
+    /// AppMetricsConvention.
+    /// Implements the <see cref="Rocket.Surgery.Extensions.DependencyInjection.IServiceConvention" />
+    /// </summary>
+    /// <seealso cref="Rocket.Surgery.Extensions.DependencyInjection.IServiceConvention" />
     public class AppMetricsConvention : IServiceConvention
     {
         private readonly IConventionScanner _scanner;
@@ -17,6 +22,13 @@ namespace Rocket.Surgery.Extensions.App.Metrics
         private readonly IMetricsBuilder _metricsBuilder;
         private readonly IHealthBuilder _healthBuilder;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppMetricsConvention"/> class.
+        /// </summary>
+        /// <param name="scanner">The scanner.</param>
+        /// <param name="diagnosticSource">The diagnostic source.</param>
+        /// <param name="metricsBuilder">The metrics builder.</param>
+        /// <param name="healthBuilder">The health builder.</param>
         public AppMetricsConvention(IConventionScanner scanner, DiagnosticSource diagnosticSource, IMetricsBuilder metricsBuilder, IHealthBuilder healthBuilder)
         {
             _scanner = scanner;
@@ -25,6 +37,10 @@ namespace Rocket.Surgery.Extensions.App.Metrics
             _healthBuilder = healthBuilder;
         }
 
+        /// <summary>
+        /// Registers the specified context.
+        /// </summary>
+        /// <param name="context">The context.</param>
         public void Register(IServiceConventionContext context)
         {
             _metricsBuilder.Configuration.ReadFrom(context.Configuration);

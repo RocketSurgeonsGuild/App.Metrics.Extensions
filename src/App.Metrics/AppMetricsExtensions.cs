@@ -5,8 +5,18 @@ using Rocket.Surgery.Conventions;
 
 namespace Rocket.Surgery.Extensions.App.Metrics
 {
+    /// <summary>
+    /// AppMetricsExtensions.
+    /// </summary>
     public static class AppMetricsExtensions
     {
+        /// <summary>
+        /// Uses the application metrics.
+        /// </summary>
+        /// <param name="container">The container.</param>
+        /// <param name="metricsBuilder">The metrics builder.</param>
+        /// <param name="healthBuilder">The health builder.</param>
+        /// <returns>IConventionHostBuilder.</returns>
         public static IConventionHostBuilder UseAppMetrics(
             this IConventionHostBuilder container, IMetricsBuilder metricsBuilder = null, IHealthBuilder healthBuilder= null)
         {
@@ -16,6 +26,11 @@ namespace Rocket.Surgery.Extensions.App.Metrics
             return container;
         }
 
+        /// <summary>
+        /// Uses the default application metrics.
+        /// </summary>
+        /// <param name="container">The container.</param>
+        /// <returns>IConventionHostBuilder.</returns>
         public static IConventionHostBuilder UseDefaultAppMetrics(
             this IConventionHostBuilder container)
         {
