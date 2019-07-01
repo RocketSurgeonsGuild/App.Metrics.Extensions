@@ -18,11 +18,14 @@ namespace Rocket.Surgery.Extensions.App.Metrics
         /// <param name="healthBuilder">The health builder.</param>
         /// <returns>IConventionHostBuilder.</returns>
         public static IConventionHostBuilder UseAppMetrics(
-            this IConventionHostBuilder container, IMetricsBuilder metricsBuilder = null, IHealthBuilder healthBuilder= null)
+            this IConventionHostBuilder container, IMetricsBuilder metricsBuilder = null, IHealthBuilder healthBuilder = null)
         {
-            if (metricsBuilder == null) metricsBuilder = new MetricsBuilder();
-            if (healthBuilder == null) healthBuilder = new HealthBuilder();
-            container.Scanner.PrependConvention(new AppMetricsConvention(container.Scanner, container.DiagnosticSource, metricsBuilder, healthBuilder));
+            if (metricsBuilder == null) metricsBuilder = container.ServiceProperties.TryGetValue(typeof(IMetricsBuilder), out var metricsBuilderObject) ? metricsBuilderObject as IMetricsBuilder : new MetricsBuilder();
+            if (healthBuilder == null) healthBuilder = container.ServiceProperties.TryGetValue(typeof(IHealthBuilder), out var healthBuilderObject) ? healthBuilderObject as IHealthBuilder : new HealthBuilder();
+
+            container.ServiceProperties[typeof(IMetricsBuilder)] = metricsBuilder;
+            container.ServiceProperties[typeof(IHealthBuilder)] = healthBuilder;
+            container.Scanner.PrependConvention<AppMetricsConvention>();
             return container;
         }
 
@@ -34,7 +37,9 @@ namespace Rocket.Surgery.Extensions.App.Metrics
         public static IConventionHostBuilder UseDefaultAppMetrics(
             this IConventionHostBuilder container)
         {
-            container.Scanner.PrependConvention(new AppMetricsConvention(container.Scanner, container.DiagnosticSource, AppMetrics.CreateDefaultBuilder(), AppMetricsHealth.CreateDefaultBuilder()));
+            container.ServiceProperties[typeof(IMetricsBuilder)] = AppMetrics.CreateDefaultBuilder();
+            container.ServiceProperties[typeof(IHealthBuilder)] = AppMetricsHealth.CreateDefaultBuilder();
+            container.Scanner.PrependConvention<AppMetricsConvention>();
             return container;
         }
     }

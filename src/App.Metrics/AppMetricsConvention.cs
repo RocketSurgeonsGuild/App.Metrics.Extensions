@@ -4,9 +4,15 @@ using App.Metrics;
 using App.Metrics.Extensions.Configuration;
 using App.Metrics.Health;
 using App.Metrics.Health.Extensions.Configuration;
+using App.Metrics.Logging;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Rocket.Surgery.Conventions;
 using Rocket.Surgery.Conventions.Scanners;
+using Rocket.Surgery.Extensions.App.Metrics;
 using Rocket.Surgery.Extensions.DependencyInjection;
+
+[assembly: Convention(typeof(AppMetricsConvention))]
 
 namespace Rocket.Surgery.Extensions.App.Metrics
 {
@@ -18,7 +24,7 @@ namespace Rocket.Surgery.Extensions.App.Metrics
     public class AppMetricsConvention : IServiceConvention
     {
         private readonly IConventionScanner _scanner;
-        private readonly DiagnosticSource _diagnosticSource;
+        private readonly ILogger _diagnosticSource;
         private readonly IMetricsBuilder _metricsBuilder;
         private readonly IHealthBuilder _healthBuilder;
 
@@ -26,15 +32,15 @@ namespace Rocket.Surgery.Extensions.App.Metrics
         /// Initializes a new instance of the <see cref="AppMetricsConvention"/> class.
         /// </summary>
         /// <param name="scanner">The scanner.</param>
-        /// <param name="diagnosticSource">The diagnostic source.</param>
+        /// <param name="diagnosticSource">The diagnostic source logger.</param>
         /// <param name="metricsBuilder">The metrics builder.</param>
         /// <param name="healthBuilder">The health builder.</param>
-        public AppMetricsConvention(IConventionScanner scanner, DiagnosticSource diagnosticSource, IMetricsBuilder metricsBuilder, IHealthBuilder healthBuilder)
+        public AppMetricsConvention(IConventionScanner scanner, ILogger diagnosticSource, IMetricsBuilder metricsBuilder = null, IHealthBuilder healthBuilder = null)
         {
             _scanner = scanner;
             _diagnosticSource = diagnosticSource;
-            _metricsBuilder = metricsBuilder;
-            _healthBuilder = healthBuilder;
+            _metricsBuilder = metricsBuilder ?? AppMetrics.CreateDefaultBuilder();
+            _healthBuilder = healthBuilder ?? AppMetricsHealth.CreateDefaultBuilder();
         }
 
         /// <summary>

@@ -53,15 +53,14 @@ namespace Rocket.Surgery.Extensions.App.Metrics
             IHealthBuilder healthBuilder,
             IRocketEnvironment environment,
             IConfiguration configuration,
-            DiagnosticSource diagnosticSource,
+            ILogger diagnosticSource,
             IDictionary<object, object> properties) : base(scanner, assemblyProvider, assemblyCandidateFinder, properties)
         {
             Environment = environment ?? throw new ArgumentNullException(nameof(environment));
             MetricsBuilder = metricsBuilder ?? throw new ArgumentNullException(nameof(metricsBuilder));
             HealthBuilder = healthBuilder ?? throw new ArgumentNullException(nameof(healthBuilder));
             Configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
-            var diagnosticSource1 = diagnosticSource ?? throw new ArgumentNullException(nameof(diagnosticSource));
-            Logger = new DiagnosticLogger(diagnosticSource1);
+            Logger = diagnosticSource ?? throw new ArgumentNullException(nameof(diagnosticSource));
         }
 
         /// <summary>
@@ -69,31 +68,25 @@ namespace Rocket.Surgery.Extensions.App.Metrics
         /// </summary>
         /// <value>The configuration.</value>
         public IConfiguration Configuration { get; }
+
         /// <summary>
         /// Gets the metrics builder.
         /// </summary>
         /// <value>The metrics builder.</value>
         public IMetricsBuilder MetricsBuilder { get; }
+
         /// <summary>
         /// Gets the health builder.
         /// </summary>
         /// <value>The health builder.</value>
         public IHealthBuilder HealthBuilder { get; }
+
         /// <summary>
         /// A logger that is configured to work with each convention item
         /// </summary>
         /// <value>The logger.</value>
         public ILogger Logger { get; }
-        /// <summary>
-        /// Gets the assembly provider.
-        /// </summary>
-        /// <value>The assembly provider.</value>
-        public IAssemblyProvider AssemblyProvider { get; }
-        /// <summary>
-        /// Gets the assembly candidate finder.
-        /// </summary>
-        /// <value>The assembly candidate finder.</value>
-        public IAssemblyCandidateFinder AssemblyCandidateFinder { get; }
+
         /// <summary>
         /// The environment that this convention is running
         /// Based on IHostEnvironment / IHostingEnvironment
