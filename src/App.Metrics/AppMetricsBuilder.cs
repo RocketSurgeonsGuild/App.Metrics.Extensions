@@ -13,13 +13,15 @@ namespace Rocket.Surgery.Extensions.App.Metrics
 {
     /// <summary>
     /// Logging Builder
-    /// Implements the <see cref="Rocket.Surgery.Conventions.ConventionBuilder{Rocket.Surgery.Extensions.App.Metrics.IAppMetricsBuilder, Rocket.Surgery.Extensions.App.Metrics.IAppMetricsConvention, Rocket.Surgery.Extensions.App.Metrics.AppMetricsConventionDelegate}" />
-    /// Implements the <see cref="Rocket.Surgery.Extensions.App.Metrics.IAppMetricsBuilder" />
-    /// Implements the <see cref="Rocket.Surgery.Extensions.App.Metrics.IAppMetricsConventionContext" />
+    /// Implements the <see cref="ConventionBuilder{IAppMetricsBuilder, IAppMetricsConvention, AppMetricsConventionDelegate}" />
+    /// Implements the <see cref="IAppMetricsBuilder" />
+    /// Implements the <see cref="IAppMetricsConvention" />
+    /// Implements the <see cref="IAppMetricsConventionContext" />
     /// </summary>
-    /// <seealso cref="Rocket.Surgery.Conventions.ConventionBuilder{Rocket.Surgery.Extensions.App.Metrics.IAppMetricsBuilder, Rocket.Surgery.Extensions.App.Metrics.IAppMetricsConvention, Rocket.Surgery.Extensions.App.Metrics.AppMetricsConventionDelegate}" />
-    /// <seealso cref="Rocket.Surgery.Extensions.App.Metrics.IAppMetricsBuilder" />
-    /// <seealso cref="Rocket.Surgery.Extensions.App.Metrics.IAppMetricsConventionContext" />
+    /// <seealso cref="ConventionBuilder{IAppMetricsBuilder, IAppMetricsConvention, AppMetricsConventionDelegate}" />
+    /// <seealso cref="IAppMetricsBuilder" />
+    /// <seealso cref="IAppMetricsConvention" />
+    /// <seealso cref="IAppMetricsConventionContext" />
     public class AppMetricsBuilder : ConventionBuilder<IAppMetricsBuilder, IAppMetricsConvention, AppMetricsConventionDelegate>, IAppMetricsBuilder, IAppMetricsConventionContext
     {
         /// <summary>
@@ -97,7 +99,7 @@ namespace Rocket.Surgery.Extensions.App.Metrics
         /// <summary>
         /// Builds this instance.
         /// </summary>
-        /// <returns>System.ValueTuple&lt;IMetricsRoot, IHealthRoot&gt;.</returns>
+        /// <returns>System.ValueTuple{IMetricsRoot, IHealthRoot}</returns>
         public (IMetricsRoot metrics, IHealthRoot health) Build()
         {
             new ConventionComposer(Scanner)

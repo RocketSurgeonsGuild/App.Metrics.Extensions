@@ -18,9 +18,9 @@ namespace Rocket.Surgery.Extensions.App.Metrics
 {
     /// <summary>
     /// AppMetricsConvention.
-    /// Implements the <see cref="Rocket.Surgery.Extensions.DependencyInjection.IServiceConvention" />
+    /// Implements the <see cref="IServiceConvention" />
     /// </summary>
-    /// <seealso cref="Rocket.Surgery.Extensions.DependencyInjection.IServiceConvention" />
+    /// <seealso cref="IServiceConvention" />
     public class AppMetricsConvention : IServiceConvention
     {
         private readonly IConventionScanner _scanner;

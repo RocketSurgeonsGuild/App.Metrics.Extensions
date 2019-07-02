@@ -3,10 +3,10 @@
 namespace Rocket.Surgery.Extensions.App.Metrics
 {
     /// <summary>
-    ///  ILoggingConvention
-    /// Implements the <see cref="Rocket.Surgery.Conventions.IConvention{Rocket.Surgery.Extensions.App.Metrics.IAppMetricsConventionContext}" />
+    ///  IAppMetricsConvention
+    /// Implements the <see cref="IConvention{IAppMetricsConventionContext}" />
     /// </summary>
-    /// <seealso cref="Rocket.Surgery.Conventions.IConvention{Rocket.Surgery.Extensions.App.Metrics.IAppMetricsConventionContext}" />
+    /// <seealso cref="IConvention{IAppMetricsConventionContext}" />
     public interface IAppMetricsConvention : IConvention<IAppMetricsConventionContext>
     {
 

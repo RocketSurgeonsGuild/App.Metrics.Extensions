@@ -10,9 +10,9 @@ namespace Rocket.Surgery.Extensions.App.Metrics
 {
     /// <summary>
     ///  IAppMetricsConventionContext
-    /// Implements the <see cref="Rocket.Surgery.Conventions.IConventionContext" />
+    /// Implements the <see cref="IConventionContext" />
     /// </summary>
-    /// <seealso cref="Rocket.Surgery.Conventions.IConventionContext" />
+    /// <seealso cref="IConventionContext" />
     public interface IAppMetricsConventionContext : IConventionContext
     {
         /// <summary>

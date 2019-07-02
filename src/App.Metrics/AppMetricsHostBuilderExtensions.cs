@@ -2,11 +2,13 @@
 using App.Metrics.Health;
 using App.Metrics.Health.Builder;
 using Rocket.Surgery.Conventions;
+using Rocket.Surgery.Extensions.App.Metrics;
 
-namespace Rocket.Surgery.Extensions.App.Metrics
+// ReSharper disable once CheckNamespace
+namespace Rocket.Surgery.Conventions
 {
     /// <summary>
-    /// AppMetricsExtensions.
+    /// AppMetricsHostBuilderExtensions.
     /// </summary>
     public static class AppMetricsHostBuilderExtensions
     {

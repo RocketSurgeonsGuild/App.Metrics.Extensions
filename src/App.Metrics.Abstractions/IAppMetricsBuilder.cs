@@ -3,9 +3,9 @@ using Rocket.Surgery.Conventions;
 namespace Rocket.Surgery.Extensions.App.Metrics
 {
     /// <summary>
-    ///  ILoggingConvention
-    /// Implements the <see cref="Rocket.Surgery.Conventions.IConventionBuilder{Rocket.Surgery.Extensions.App.Metrics.IAppMetricsBuilder, Rocket.Surgery.Extensions.App.Metrics.IAppMetricsConvention, Rocket.Surgery.Extensions.App.Metrics.AppMetricsConventionDelegate}" />
+    ///  IAppMetricsBuilder
+    /// Implements the <see cref="IConventionBuilder{IAppMetricsBuilder, IAppMetricsConvention, AppMetricsConventionDelegate}" />
     /// </summary>
-    /// <seealso cref="Rocket.Surgery.Conventions.IConventionBuilder{Rocket.Surgery.Extensions.App.Metrics.IAppMetricsBuilder, Rocket.Surgery.Extensions.App.Metrics.IAppMetricsConvention, Rocket.Surgery.Extensions.App.Metrics.AppMetricsConventionDelegate}" />
+    /// <seealso cref="IConventionBuilder{IAppMetricsBuilder, IAppMetricsConvention, AppMetricsConventionDelegate}" />
     public interface IAppMetricsBuilder : IConventionBuilder<IAppMetricsBuilder, IAppMetricsConvention, AppMetricsConventionDelegate> { }
 }
