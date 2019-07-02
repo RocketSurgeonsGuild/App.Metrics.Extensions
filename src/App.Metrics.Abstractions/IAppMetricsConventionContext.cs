@@ -9,7 +9,7 @@ using Rocket.Surgery.Conventions.Reflection;
 namespace Rocket.Surgery.Extensions.App.Metrics
 {
     /// <summary>
-    /// Interface IAppMetricsConventionContext
+    ///  IAppMetricsConventionContext
     /// Implements the <see cref="Rocket.Surgery.Conventions.IConventionContext" />
     /// </summary>
     /// <seealso cref="Rocket.Surgery.Conventions.IConventionContext" />
