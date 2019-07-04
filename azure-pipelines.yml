@@ -14,7 +14,7 @@ resources:
     - repository: rsg
       type: github
       name: RocketSurgeonsGuild/AzureDevopsTemplates
-      ref: refs/tags/v0.5.11
+      ref: refs/tags/v0.6.0
       endpoint: github
 
 variables:
@@ -29,7 +29,7 @@ variables:
   CodeCovToken: '7dfeb756-b27e-47ec-8906-a349cf7e0688'
 
 jobs:
-  - template: pipeline/cake.yml@rsg
+  - template: pipeline/nuke.yml@rsg
     parameters:
       Configuration: $(Configuration)
       Verbosity: $(Verbosity)
