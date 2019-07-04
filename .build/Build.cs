@@ -1,6 +1,9 @@
+using System.Linq;
 using Nuke.Common;
 using Nuke.Common.Execution;
+using Nuke.Common.ProjectModel;
 using Rocket.Surgery.Nuke;
+using static Nuke.Common.Logger;
 
 [CheckBuildProjectConfigurations]
 [UnsetVisualStudioEnvironmentVariables]
