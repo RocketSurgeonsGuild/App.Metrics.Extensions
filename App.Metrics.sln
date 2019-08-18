@@ -19,11 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = ".build", ".build\.build.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{E3DCB78E-EE06-4EA3-88AC-762D8910387C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rocket.Surgery.Extensions.App.Metrics", "src\App.Metrics\Rocket.Surgery.Extensions.App.Metrics.csproj", "{8AE60690-F92B-451D-BCCC-04ED66A43DE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rocket.Surgery.Extensions.App.Metrics", "src\App.Metrics\Rocket.Surgery.Extensions.App.Metrics.csproj", "{8AE60690-F92B-451D-BCCC-04ED66A43DE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rocket.Surgery.Extensions.App.Metrics.Abstractions", "src\App.Metrics.Abstractions\Rocket.Surgery.Extensions.App.Metrics.Abstractions.csproj", "{7558876D-F24C-47DD-A48F-769A61EE72E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rocket.Surgery.Extensions.App.Metrics.Abstractions", "src\App.Metrics.Abstractions\Rocket.Surgery.Extensions.App.Metrics.Abstractions.csproj", "{7558876D-F24C-47DD-A48F-769A61EE72E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rocket.Surgery.Extensions.App.Metrics.Tests", "test\App.Metrics.Tests\Rocket.Surgery.Extensions.App.Metrics.Tests.csproj", "{41171D21-E177-477D-8DE2-E066D0743CE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rocket.Surgery.Extensions.App.Metrics.Tests", "test\App.Metrics.Tests\Rocket.Surgery.Extensions.App.Metrics.Tests.csproj", "{41171D21-E177-477D-8DE2-E066D0743CE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

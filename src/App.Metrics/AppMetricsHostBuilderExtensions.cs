@@ -1,4 +1,4 @@
-﻿using App.Metrics;
+using App.Metrics;
 using App.Metrics.Health;
 using App.Metrics.Health.Builder;
 using Rocket.Surgery.Conventions;
@@ -20,7 +20,7 @@ namespace Rocket.Surgery.Conventions
         /// <param name="healthBuilder">The health builder.</param>
         /// <returns>IConventionHostBuilder.</returns>
         public static IConventionHostBuilder UseAppMetrics(
-            this IConventionHostBuilder container, IMetricsBuilder metricsBuilder = null, IHealthBuilder healthBuilder = null)
+            this IConventionHostBuilder container, IMetricsBuilder? metricsBuilder = null, IHealthBuilder? healthBuilder = null)
         {
             if (metricsBuilder == null) metricsBuilder = container.ServiceProperties.TryGetValue(typeof(IMetricsBuilder), out var metricsBuilderObject) ? metricsBuilderObject as IMetricsBuilder : new MetricsBuilder();
             if (healthBuilder == null) healthBuilder = container.ServiceProperties.TryGetValue(typeof(IHealthBuilder), out var healthBuilderObject) ? healthBuilderObject as IHealthBuilder : new HealthBuilder();

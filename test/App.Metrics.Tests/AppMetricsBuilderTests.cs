@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using App.Metrics;
@@ -53,7 +53,7 @@ namespace Rocket.Surgery.Extensions.App.Metrics.Tests
         {
             var properties = new ServiceProviderDictionary();
             AutoFake.Provide<IServiceProviderDictionary>(properties);
-            AutoFake.Provide<IDictionary<object, object>>(properties);
+            AutoFake.Provide<IDictionary<object, object?>>(properties);
             AutoFake.Provide<IServiceProvider>(properties);
             var finder = AutoFake.Resolve<IAssemblyCandidateFinder>();
 
@@ -80,7 +80,7 @@ namespace Rocket.Surgery.Extensions.App.Metrics.Tests
         {
             var properties = new ServiceProviderDictionary();
             AutoFake.Provide<IServiceProviderDictionary>(properties);
-            AutoFake.Provide<IDictionary<object, object>>(properties);
+            AutoFake.Provide<IDictionary<object, object?>>(properties);
             AutoFake.Provide<IServiceProvider>(properties);
             properties[typeof(ILogger)] = Logger;
             var scanner = AutoFake.Resolve<SimpleConventionScanner>();
@@ -104,7 +104,7 @@ namespace Rocket.Surgery.Extensions.App.Metrics.Tests
         {
             var properties = new ServiceProviderDictionary();
             AutoFake.Provide<IServiceProviderDictionary>(properties);
-            AutoFake.Provide<IDictionary<object, object>>(properties);
+            AutoFake.Provide<IDictionary<object, object?>>(properties);
             AutoFake.Provide<IServiceProvider>(properties);
             properties[typeof(ILogger)] = Logger;
             var scanner = AutoFake.Resolve<SimpleConventionScanner>();

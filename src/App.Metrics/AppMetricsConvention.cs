@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using System.Linq;
 using App.Metrics;
 using App.Metrics.Extensions.Configuration;
@@ -35,7 +35,7 @@ namespace Rocket.Surgery.Extensions.App.Metrics
         /// <param name="diagnosticSource">The diagnostic source logger.</param>
         /// <param name="metricsBuilder">The metrics builder.</param>
         /// <param name="healthBuilder">The health builder.</param>
-        public AppMetricsConvention(IConventionScanner scanner, ILogger diagnosticSource, IMetricsBuilder metricsBuilder = null, IHealthBuilder healthBuilder = null)
+        public AppMetricsConvention(IConventionScanner scanner, ILogger diagnosticSource, IMetricsBuilder? metricsBuilder = null, IHealthBuilder? healthBuilder = null)
         {
             _scanner = scanner;
             _diagnosticSource = diagnosticSource;

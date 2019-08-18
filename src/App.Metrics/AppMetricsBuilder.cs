@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using App.Metrics;
@@ -56,7 +56,7 @@ namespace Rocket.Surgery.Extensions.App.Metrics
             IRocketEnvironment environment,
             IConfiguration configuration,
             ILogger diagnosticSource,
-            IDictionary<object, object> properties) : base(scanner, assemblyProvider, assemblyCandidateFinder, properties)
+            IDictionary<object, object?> properties) : base(scanner, assemblyProvider, assemblyCandidateFinder, properties)
         {
             Environment = environment ?? throw new ArgumentNullException(nameof(environment));
             MetricsBuilder = metricsBuilder ?? throw new ArgumentNullException(nameof(metricsBuilder));
@@ -102,12 +102,12 @@ namespace Rocket.Surgery.Extensions.App.Metrics
         /// <returns>System.ValueTuple{IMetricsRoot, IHealthRoot}</returns>
         public (IMetricsRoot metrics, IHealthRoot health) Build()
         {
-            new ConventionComposer(Scanner)
-                .Register(
-                    this,
-                    typeof(IAppMetricsConvention),
-                    typeof(AppMetricsConventionDelegate)
-                );
+            Composer.Register(
+                Scanner,
+                this,
+                typeof(IAppMetricsConvention),
+                typeof(AppMetricsConventionDelegate)
+            );
 
             return (MetricsBuilder.Build(), HealthBuilder.Build());
         }
