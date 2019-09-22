@@ -18,7 +18,7 @@ using Xunit.Abstractions;
 
 namespace Rocket.Surgery.Extensions.App.Metrics.Tests
 {
-    public class AppMetricsBuilderTests : AutoTestBase
+    public class AppMetricsBuilderTests : AutoFakeTest
     {
         public AppMetricsBuilderTests(ITestOutputHelper outputHelper) : base(outputHelper) { }
 
@@ -35,7 +35,7 @@ namespace Rocket.Surgery.Extensions.App.Metrics.Tests
             a.Should().NotThrow();
         }
     }
-    public class UseAppMetricsTests : AutoTestBase
+    public class UseAppMetricsTests : AutoFakeTest
     {
         public UseAppMetricsTests(ITestOutputHelper outputHelper) : base(outputHelper, LogLevel.Trace)
         {
@@ -74,7 +74,7 @@ namespace Rocket.Surgery.Extensions.App.Metrics.Tests
             services.Should().Contain(x => x.ServiceType == typeof(IHealth));
             services.Should().Contain(x => x.ServiceType == typeof(IMetrics));
         }
-        
+
         [Fact]
         public void AddsAppMetrics()
         {
