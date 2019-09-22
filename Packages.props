@@ -43,7 +43,7 @@
     <PackageReference Update="App.Metrics.Health.Extensions.Hosting" Version="3.2.0-dev0002" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Update="Rocket.Surgery.Extensions.Testing" Version="1.2.3" />
+    <PackageReference Update="Rocket.Surgery.Extensions.Testing" Version="2.0.0" />
     <PackageReference Update="Autofac.Extras.FakeItEasy" Version="5.0.1" />
     <PackageReference Update="Bogus" Version="28.2.1" />
     <PackageReference Update="coverlet.collector" Version="1.0.1" />
