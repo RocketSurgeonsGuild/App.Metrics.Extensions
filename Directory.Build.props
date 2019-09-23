@@ -8,13 +8,10 @@
         <PackageIcon>images/packageicon.png</PackageIcon>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <!--
-            PackageReleaseNotes
-
             in package
             Title
             Description
             Tags
-
         -->
         <LangVersion>8.0</LangVersion>
         <Nullable>enable</Nullable>
