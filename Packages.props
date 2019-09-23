@@ -15,11 +15,11 @@
     <PackageReference Update="System.Diagnostics.DiagnosticSource" Version="4.5.1" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)'!='netstandard2.0' and '$(TargetFramework)'!='netcoreapp2.1'">
-    <PackageReference Update="Microsoft.Extensions.Configuration.Abstractions" Version="3.0.0-rc1.19456.10" />
-    <PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.0.0-rc1.19456.10" />
-    <PackageReference Update="Microsoft.Extensions.Hosting.Abstractions" Version="3.0.0-rc1.19456.10" />
-    <PackageReference Update="Microsoft.Extensions.Logging.Abstractions" Version="3.0.0-rc1.19456.10" />
-    <PackageReference Update="System.Diagnostics.DiagnosticSource" Version="4.6.0-rc1.19456.4" />
+    <PackageReference Update="Microsoft.Extensions.Configuration.Abstractions" Version="3.0.0" />
+    <PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.0.0" />
+    <PackageReference Update="Microsoft.Extensions.Hosting.Abstractions" Version="3.0.0" />
+    <PackageReference Update="Microsoft.Extensions.Logging.Abstractions" Version="3.0.0" />
+    <PackageReference Update="System.Diagnostics.DiagnosticSource" Version="4.6.0" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Update="Rocket.Surgery.Conventions" Version="8.0.0" />
