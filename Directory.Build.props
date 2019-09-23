@@ -3,7 +3,7 @@
         <Company>Rocket Surgeons Guild</Company>
         <Copyright>Copyright Rocket Surgeons Guild © $([System.DateTime]::Now.ToString('yyyy'))</Copyright>
         <Authors>David Driscoll,Rocket Surgeons Guild contributors</Authors>
-        <ProjectUrl>$(ScmRepositoryUrl)</ProjectUrl>
+        <PackageProjectUrl>https://rocketsurgeonsguild.github.io/</PackageProjectUrl>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <PackageIcon>images/packageicon.png</PackageIcon>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
