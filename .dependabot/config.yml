@@ -13,7 +13,7 @@ update_configs:
     automerged_updates:
       - match:
           dependency_name: "Rocket.Surgery.*"
-          update_type: "all"
+          update_type: "semver:minor"
     ignored_updates:
       - match:
           dependency_name: Microsoft.Extensions.*
