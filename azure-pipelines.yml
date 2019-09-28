@@ -14,7 +14,7 @@ resources:
     - repository: rsg
       type: github
       name: RocketSurgeonsGuild/AzureDevopsTemplates
-      ref: feature/disable-github-tasks-when-not-needed
+      ref: refs/tags/v0.10.8
       endpoint: github
 
 variables:
