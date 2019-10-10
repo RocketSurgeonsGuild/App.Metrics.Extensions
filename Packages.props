@@ -25,7 +25,7 @@
     <PackageReference Update="Rocket.Surgery.Conventions" Version="9.0.3" />
     <PackageReference Update="Rocket.Surgery.Conventions.Abstractions" Version="9.0.3" />
     <PackageReference Update="Rocket.Surgery.Extensions.DependencyInjection.Abstractions" Version="9.0.3" />
-    <PackageReference Update="Rocket.Surgery.Extensions.DependencyInjection" Version="9.0.3" />
+    <PackageReference Update="Rocket.Surgery.Extensions.DependencyInjection" Version="9.0.4" />
     <PackageReference Update="App.Metrics" Version="3.2.0-dev0002" />
     <PackageReference Update="App.Metrics.Abstractions" Version="3.2.0-dev0002" />
     <PackageReference Update="App.Metrics.AspNetCore" Version="3.2.0-dev0002" />
