@@ -8,13 +8,6 @@
     <GlobalPackageReference Include="Roslynator.Analyzers" Version="2.1.0" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Update="Microsoft.Extensions.Configuration.Abstractions" Version="2.1.1" />
-    <PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.1.1" />
-    <PackageReference Update="Microsoft.Extensions.Hosting.Abstractions" Version="2.1.1" />
-    <PackageReference Update="Microsoft.Extensions.Logging.Abstractions" Version="2.1.1" />
-    <PackageReference Update="System.Diagnostics.DiagnosticSource" Version="4.5.1" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)'!='netstandard2.0' and '$(TargetFramework)'!='netcoreapp2.1'">
     <PackageReference Update="Microsoft.Extensions.Configuration.Abstractions" Version="3.0.0" />
     <PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.0.0" />
     <PackageReference Update="Microsoft.Extensions.Hosting.Abstractions" Version="3.0.0" />
@@ -24,23 +17,12 @@
   <ItemGroup>
     <PackageReference Update="Rocket.Surgery.Conventions" Version="9.0.5" />
     <PackageReference Update="Rocket.Surgery.Conventions.Abstractions" Version="9.0.5" />
-    <PackageReference Update="Rocket.Surgery.Extensions.DependencyInjection.Abstractions" Version="9.0.5" />
-    <PackageReference Update="Rocket.Surgery.Extensions.DependencyInjection" Version="9.0.5" />
-    <PackageReference Update="App.Metrics" Version="3.2.0-dev0002" />
-    <PackageReference Update="App.Metrics.Abstractions" Version="3.2.0-dev0002" />
-    <PackageReference Update="App.Metrics.AspNetCore" Version="3.2.0-dev0002" />
-    <PackageReference Update="App.Metrics.AspNetCore.Health" Version="3.2.0-dev0002" />
-    <PackageReference Update="App.Metrics.Core" Version="3.2.0-dev0002" />
-    <PackageReference Update="App.Metrics.Extensions.Configuration" Version="3.2.0-dev0002" />
-    <PackageReference Update="App.Metrics.Extensions.DependencyInjection" Version="3.2.0-dev0002" />
-    <PackageReference Update="App.Metrics.Extensions.HealthChecks" Version="3.2.0-dev0002" />
-    <PackageReference Update="App.Metrics.Extensions.Hosting" Version="3.2.0-dev0002" />
-    <PackageReference Update="App.Metrics.Health" Version="3.2.0-dev0002" />
-    <PackageReference Update="App.Metrics.Health.Abstractions" Version="3.2.0-dev0002" />
-    <PackageReference Update="App.Metrics.Health.Core" Version="3.2.0-dev0002" />
-    <PackageReference Update="App.Metrics.Health.Extensions.Configuration" Version="3.2.0-dev0002" />
-    <PackageReference Update="App.Metrics.Health.Extensions.DependencyInjection" Version="3.2.0-dev0002" />
-    <PackageReference Update="App.Metrics.Health.Extensions.Hosting" Version="3.2.0-dev0002" />
+    <PackageReference Update="Rocket.Surgery.Hosting" Version="9.0.5" />
+    <PackageReference Update="Rocket.Surgery.Hosting.Abstractions" Version="9.0.5" />
+    <PackageReference Update="App.Metrics.Abstractions" Version="4.0.0-preview1.0.3" />
+    <PackageReference Update="App.Metrics.AspNetCore" Version="4.0.0-preview1.0.3" />
+    <PackageReference Update="App.Metrics.AppNetCore" Version="4.0.0-preview1.0.3" />
+    <PackageReference Update="App.Metrics.Extensions.HealthChecks" Version="4.0.0-preview1.0.3" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Update="Rocket.Surgery.Extensions.Testing.FakeItEasy" Version="2.2.1" />

@@ -2,36 +2,36 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using App.Metrics;
-using App.Metrics.Health;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Rocket.Surgery.Conventions;
 using Rocket.Surgery.Conventions.Reflection;
 using Rocket.Surgery.Conventions.Scanners;
+using IAppMetricsBuilder = App.Metrics.IMetricsBuilder;
+using IMetricsBuilder = Rocket.Surgery.Extensions.Metrics.IMetricsBuilder;
 
-namespace Rocket.Surgery.Extensions.App.Metrics
+namespace Rocket.Surgery.Extensions.Metrics
 {
     /// <summary>
     /// Logging Builder
-    /// Implements the <see cref="ConventionBuilder{IAppMetricsBuilder, IAppMetricsConvention, AppMetricsConventionDelegate}" />
-    /// Implements the <see cref="IAppMetricsBuilder" />
-    /// Implements the <see cref="IAppMetricsConvention" />
-    /// Implements the <see cref="IAppMetricsConventionContext" />
+    /// Implements the <see cref="ConventionBuilder{IMetricsBuilder, IMetricsConvention, MetricsConventionDelegate}" />
+    /// Implements the <see cref="IMetricsBuilder" />
+    /// Implements the <see cref="IMetricsConvention" />
+    /// Implements the <see cref="IMetricsConventionContext" />
     /// </summary>
-    /// <seealso cref="ConventionBuilder{IAppMetricsBuilder, IAppMetricsConvention, AppMetricsConventionDelegate}" />
-    /// <seealso cref="IAppMetricsBuilder" />
-    /// <seealso cref="IAppMetricsConvention" />
-    /// <seealso cref="IAppMetricsConventionContext" />
-    public class AppMetricsBuilder : ConventionBuilder<IAppMetricsBuilder, IAppMetricsConvention, AppMetricsConventionDelegate>, IAppMetricsBuilder, IAppMetricsConventionContext
+    /// <seealso cref="ConventionBuilder{IMetricsBuilder, IMetricsConvention, MetricsConventionDelegate}" />
+    /// <seealso cref="IMetricsBuilder" />
+    /// <seealso cref="IMetricsConvention" />
+    /// <seealso cref="IMetricsConventionContext" />
+    public class MetricsBuilder : ConventionBuilder<IMetricsBuilder, IMetricsConvention, MetricsConventionDelegate>, IMetricsBuilder, IMetricsConventionContext
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AppMetricsBuilder"/> class.
+        /// Initializes a new instance of the <see cref="MetricsBuilder"/> class.
         /// </summary>
         /// <param name="scanner">The scanner.</param>
         /// <param name="assemblyProvider">The assembly provider.</param>
         /// <param name="assemblyCandidateFinder">The assembly candidate finder.</param>
-        /// <param name="metricsBuilder">The metrics builder.</param>
-        /// <param name="healthBuilder">The health builder.</param>
+        /// <param name="appMetricsBuilder">The metrics builder.</param>
         /// <param name="environment">The environment.</param>
         /// <param name="configuration">The configuration.</param>
         /// <param name="diagnosticSource">The diagnostic source.</param>
@@ -41,26 +41,22 @@ namespace Rocket.Surgery.Extensions.App.Metrics
         /// or
         /// metricsBuilder
         /// or
-        /// healthBuilder
-        /// or
         /// configuration
         /// or
         /// diagnosticSource
         /// </exception>
-        public AppMetricsBuilder(
+        public MetricsBuilder(
             IConventionScanner scanner,
             IAssemblyProvider assemblyProvider,
             IAssemblyCandidateFinder assemblyCandidateFinder,
-            IMetricsBuilder metricsBuilder,
-            IHealthBuilder healthBuilder,
+            IAppMetricsBuilder appMetricsBuilder,
             IRocketEnvironment environment,
             IConfiguration configuration,
             ILogger diagnosticSource,
             IDictionary<object, object?> properties) : base(scanner, assemblyProvider, assemblyCandidateFinder, properties)
         {
             Environment = environment ?? throw new ArgumentNullException(nameof(environment));
-            MetricsBuilder = metricsBuilder ?? throw new ArgumentNullException(nameof(metricsBuilder));
-            HealthBuilder = healthBuilder ?? throw new ArgumentNullException(nameof(healthBuilder));
+            AppMetricsBuilder = appMetricsBuilder ?? throw new ArgumentNullException(nameof(appMetricsBuilder));
             Configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
             Logger = diagnosticSource ?? throw new ArgumentNullException(nameof(diagnosticSource));
         }
@@ -75,13 +71,7 @@ namespace Rocket.Surgery.Extensions.App.Metrics
         /// Gets the metrics builder.
         /// </summary>
         /// <value>The metrics builder.</value>
-        public IMetricsBuilder MetricsBuilder { get; }
-
-        /// <summary>
-        /// Gets the health builder.
-        /// </summary>
-        /// <value>The health builder.</value>
-        public IHealthBuilder HealthBuilder { get; }
+        public IAppMetricsBuilder AppMetricsBuilder { get; }
 
         /// <summary>
         /// A logger that is configured to work with each convention item
@@ -99,17 +89,14 @@ namespace Rocket.Surgery.Extensions.App.Metrics
         /// <summary>
         /// Builds this instance.
         /// </summary>
-        /// <returns>System.ValueTuple{IMetricsRoot, IHealthRoot}</returns>
-        public (IMetricsRoot metrics, IHealthRoot health) Build()
+        public void Build()
         {
             Composer.Register(
                 Scanner,
                 this,
-                typeof(IAppMetricsConvention),
-                typeof(AppMetricsConventionDelegate)
+                typeof(IMetricsConvention),
+                typeof(MetricsConventionDelegate)
             );
-
-            return (MetricsBuilder.Build(), HealthBuilder.Build());
         }
     }
 }

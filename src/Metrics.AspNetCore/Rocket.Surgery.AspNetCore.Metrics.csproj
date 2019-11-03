@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>netcoreapp3.0</TargetFrameworks>
+    </PropertyGroup>
+    <ItemGroup>
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+        <PackageReference Include="Rocket.Surgery.Hosting.Abstractions" />
+        <PackageReference Include="App.Metrics.AspNetCore" />
+        <PackageReference Include="App.Metrics.Extensions.HealthChecks" />
+        <ProjectReference Include="../Metrics.Extensions/Rocket.Surgery.Extensions.Metrics.csproj" />
+    </ItemGroup>
+</Project>

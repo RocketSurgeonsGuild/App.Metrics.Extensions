@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.1</TargetFrameworks>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Rocket.Surgery.Hosting.Abstractions" />
+        <PackageReference Include="App.Metrics.AppNetCore" />
+        <PackageReference Include="App.Metrics.Extensions.HealthChecks" />
+        <ProjectReference Include="../Metrics.Extensions/Rocket.Surgery.Extensions.Metrics.csproj" />
+    </ItemGroup>
+</Project>
