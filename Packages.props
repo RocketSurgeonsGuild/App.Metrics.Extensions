@@ -16,7 +16,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Update="Rocket.Surgery.Conventions" Version="9.0.5" />
-    <PackageReference Update="Rocket.Surgery.Conventions.Abstractions" Version="9.0.5" />
+    <PackageReference Update="Rocket.Surgery.Conventions.Abstractions" Version="9.0.6" />
     <PackageReference Update="Rocket.Surgery.Hosting" Version="9.0.5" />
     <PackageReference Update="Rocket.Surgery.Hosting.Abstractions" Version="9.0.5" />
     <PackageReference Update="App.Metrics.Abstractions" Version="4.0.0-preview1.0.3" />
