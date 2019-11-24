@@ -1,4 +1,6 @@
-﻿using App.Metrics;
+using System;
+using App.Metrics;
+using JetBrains.Annotations;
 using Rocket.Surgery.AspNetCore.Metrics;
 using Rocket.Surgery.Conventions;
 using Rocket.Surgery.Extensions.Metrics;
@@ -11,6 +13,7 @@ namespace Rocket.Surgery.Conventions
     /// <summary>
     /// AspNetCoreMetricsHostBuilderExtensions.
     /// </summary>
+    [PublicAPI]
     public static class AspNetCoreMetricsHostBuilderExtensions
     {
         /// <summary>
@@ -19,8 +22,13 @@ namespace Rocket.Surgery.Conventions
         /// <param name="container">The container.</param>
         /// <returns>IConventionHostBuilder.</returns>
         public static IConventionHostBuilder UseMetrics(
-            this IConventionHostBuilder container)
+            [NotNull] this IConventionHostBuilder container)
         {
+            if (container == null)
+            {
+                throw new ArgumentNullException(nameof(container));
+            }
+
             container.Set(new RocketMetricsOptions() { UseDefaults = false });
             container.Scanner.PrependConvention<AspNetCoreMetricsConvention>();
             return container;
@@ -31,8 +39,13 @@ namespace Rocket.Surgery.Conventions
         /// </summary>
         /// <param name="container">The container.</param>
         /// <returns>IConventionHostBuilder.</returns>
-        public static IConventionHostBuilder UseMetricsWithDefaults(this IConventionHostBuilder container)
+        public static IConventionHostBuilder UseMetricsWithDefaults([NotNull] this IConventionHostBuilder container)
         {
+            if (container == null)
+            {
+                throw new ArgumentNullException(nameof(container));
+            }
+
             container.Set(new RocketMetricsOptions() { UseDefaults = true });
             container.Scanner.PrependConvention<AspNetCoreMetricsConvention>();
             return container;

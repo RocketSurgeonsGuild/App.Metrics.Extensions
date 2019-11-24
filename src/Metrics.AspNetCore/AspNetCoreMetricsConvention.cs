@@ -1,5 +1,7 @@
-﻿using App.Metrics;
+using System;
+using App.Metrics;
 using App.Metrics.AspNetCore;
+using JetBrains.Annotations;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -42,8 +44,13 @@ namespace Rocket.Surgery.AspNetCore.Metrics
         /// Registers the specified context.
         /// </summary>
         /// <param name="context">The context.</param>
-        public void Register(IHostingConventionContext context)
+        public void Register([NotNull] IHostingConventionContext context)
         {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
             if (_options.UseDefaults)
             {
                 context.Builder.ConfigureMetricsWithDefaults((ctx, builder) =>

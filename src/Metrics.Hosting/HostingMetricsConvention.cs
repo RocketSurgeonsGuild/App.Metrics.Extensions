@@ -1,17 +1,17 @@
-﻿using App.Metrics;
+using System;
+using JetBrains.Annotations;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Rocket.Surgery.AspNetCore.Metrics;
 using Rocket.Surgery.Conventions;
 using Rocket.Surgery.Conventions.Scanners;
 using Rocket.Surgery.Extensions.Metrics;
-using Rocket.Surgery.Hosting;
+using Rocket.Surgery.Hosting.Metrics;
 using MetricsBuilder = Rocket.Surgery.Extensions.Metrics.MetricsBuilder;
 
 [assembly: Convention(typeof(HostingMetricsConvention))]
 
-namespace Rocket.Surgery.AspNetCore.Metrics
+namespace Rocket.Surgery.Hosting.Metrics
 {
     /// <summary>
     /// MetricsConvention.
@@ -41,8 +41,13 @@ namespace Rocket.Surgery.AspNetCore.Metrics
         /// Registers the specified context.
         /// </summary>
         /// <param name="context">The context.</param>
-        public void Register(IHostingConventionContext context)
+        public void Register([NotNull] IHostingConventionContext context)
         {
+            if (context == null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
+
             if (_options.UseDefaults)
             {
                 context.Builder.ConfigureMetricsWithDefaults((ctx, builder) =>

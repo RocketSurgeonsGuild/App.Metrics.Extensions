@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Rocket.Surgery.Conventions;
@@ -20,6 +21,7 @@ namespace Rocket.Surgery.Extensions.Metrics
     /// <seealso cref="IMetricsBuilder" />
     /// <seealso cref="IMetricsConvention" />
     /// <seealso cref="IMetricsConventionContext" />
+    [PublicAPI]
     public class MetricsBuilder : ConventionBuilder<IMetricsBuilder, IMetricsConvention, MetricsConventionDelegate>,
                                   IMetricsBuilder,
                                   IMetricsConventionContext

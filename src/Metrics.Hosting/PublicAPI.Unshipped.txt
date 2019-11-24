@@ -1,0 +1,6 @@
+Rocket.Surgery.Conventions.HostingMetricsHostBuilderExtensions
+Rocket.Surgery.Hosting.Metrics.HostingMetricsConvention
+Rocket.Surgery.Hosting.Metrics.HostingMetricsConvention.HostingMetricsConvention(Rocket.Surgery.Conventions.Scanners.IConventionScanner scanner, Microsoft.Extensions.Logging.ILogger diagnosticSource, Rocket.Surgery.Extensions.Metrics.RocketMetricsOptions options = null) -> void
+Rocket.Surgery.Hosting.Metrics.HostingMetricsConvention.Register(Rocket.Surgery.Hosting.IHostingConventionContext context) -> void
+static Rocket.Surgery.Conventions.HostingMetricsHostBuilderExtensions.UseMetrics(this Rocket.Surgery.Conventions.IConventionHostBuilder container) -> Rocket.Surgery.Conventions.IConventionHostBuilder
+static Rocket.Surgery.Conventions.HostingMetricsHostBuilderExtensions.UseMetricsWithDefaults(this Rocket.Surgery.Conventions.IConventionHostBuilder container) -> Rocket.Surgery.Conventions.IConventionHostBuilder

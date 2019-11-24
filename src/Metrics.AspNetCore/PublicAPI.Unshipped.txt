@@ -1,0 +1,6 @@
+Rocket.Surgery.AspNetCore.Metrics.AspNetCoreMetricsConvention
+Rocket.Surgery.AspNetCore.Metrics.AspNetCoreMetricsConvention.AspNetCoreMetricsConvention(Rocket.Surgery.Conventions.Scanners.IConventionScanner scanner, Microsoft.Extensions.Logging.ILogger diagnosticSource, Rocket.Surgery.Extensions.Metrics.RocketMetricsOptions options = null) -> void
+Rocket.Surgery.AspNetCore.Metrics.AspNetCoreMetricsConvention.Register(Rocket.Surgery.Hosting.IHostingConventionContext context) -> void
+Rocket.Surgery.Conventions.AspNetCoreMetricsHostBuilderExtensions
+static Rocket.Surgery.Conventions.AspNetCoreMetricsHostBuilderExtensions.UseMetrics(this Rocket.Surgery.Conventions.IConventionHostBuilder container) -> Rocket.Surgery.Conventions.IConventionHostBuilder
+static Rocket.Surgery.Conventions.AspNetCoreMetricsHostBuilderExtensions.UseMetricsWithDefaults(this Rocket.Surgery.Conventions.IConventionHostBuilder container) -> Rocket.Surgery.Conventions.IConventionHostBuilder
