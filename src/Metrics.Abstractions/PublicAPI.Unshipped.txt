@@ -1,9 +1,0 @@
-Rocket.Surgery.Extensions.Metrics.IMetricsBuilder
-Rocket.Surgery.Extensions.Metrics.IMetricsConvention
-Rocket.Surgery.Extensions.Metrics.IMetricsConventionContext
-Rocket.Surgery.Extensions.Metrics.IMetricsConventionContext.AppMetricsBuilder.get -> App.Metrics.IMetricsBuilder
-Rocket.Surgery.Extensions.Metrics.IMetricsConventionContext.AssemblyCandidateFinder.get -> Rocket.Surgery.Conventions.Reflection.IAssemblyCandidateFinder
-Rocket.Surgery.Extensions.Metrics.IMetricsConventionContext.AssemblyProvider.get -> Rocket.Surgery.Conventions.Reflection.IAssemblyProvider
-Rocket.Surgery.Extensions.Metrics.IMetricsConventionContext.Configuration.get -> Microsoft.Extensions.Configuration.IConfiguration
-Rocket.Surgery.Extensions.Metrics.IMetricsConventionContext.Environment.get -> Rocket.Surgery.Conventions.IRocketEnvironment
-Rocket.Surgery.Extensions.Metrics.MetricsConventionDelegate
