@@ -1,6 +1,7 @@
 # Rocket Surgeons - App Metrics
 
 # Status
+
 <!-- badges -->
 [![github-release-badge]][github-release]
 [![github-license-badge]][github-license]
@@ -8,20 +9,23 @@
 <!-- badges -->
 
 <!-- history badges -->
-| Azure Pipelines                                           | AppVeyor                                      |
-| --------------------------------------------------------- | --------------------------------------------- |
-| [![azurepipelines-badge]][azurepipelines]                 | [![appveyor-badge]][appveyor]                 |
+| Azure Pipelines | AppVeyor |
+| --------------- | -------- |
+| [![azurepipelines-badge]][azurepipelines] | [![appveyor-badge]][appveyor] |
 | [![azurepipelines-history-badge]][azurepipelines-history] | [![appveyor-history-badge]][appveyor-history] |
 <!-- history badges -->
 
 <!-- nuget packages -->
-| Package                                        | NuGet                                                                                          | MyGet                                                                                          |
-| ---------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| Rocket.Surgery.Extensions.Metrics              | [![nuget-version-ewtvnq6vlt5g-badge]![nuget-downloads-ewtvnq6vlt5g-badge]][nuget-ewtvnq6vlt5g] | [![myget-version-ewtvnq6vlt5g-badge]![myget-downloads-ewtvnq6vlt5g-badge]][myget-ewtvnq6vlt5g] |
-| Rocket.Surgery.Extensions.Metrics.Abstractions | [![nuget-version-ut3vyzbrdryg-badge]![nuget-downloads-ut3vyzbrdryg-badge]][nuget-ut3vyzbrdryg] | [![myget-version-ut3vyzbrdryg-badge]![myget-downloads-ut3vyzbrdryg-badge]][myget-ut3vyzbrdryg] |
+| Package | NuGet |
+| ------- | ----- |
+| Rocket.Surgery.Extensions.Metrics | [![nuget-version-yrg0nzmlxavw-badge]![nuget-downloads-yrg0nzmlxavw-badge]][nuget-yrg0nzmlxavw] |
+| Rocket.Surgery.Extensions.Metrics.Abstractions | [![nuget-version-r1ged833znfa-badge]![nuget-downloads-r1ged833znfa-badge]][nuget-r1ged833znfa] |
+| Rocket.Surgery.AspNetCore.Metrics | [![nuget-version-onxf9zmkj7sg-badge]![nuget-downloads-onxf9zmkj7sg-badge]][nuget-onxf9zmkj7sg] |
+| Rocket.Surgery.Hosting.Metrics | [![nuget-version-2im+0m81ffmw-badge]![nuget-downloads-2im+0m81ffmw-badge]][nuget-2im+0m81ffmw] |
 <!-- nuget packages -->
 
 # Whats next?
+
 TBD
 
 <!-- generated references -->
@@ -39,18 +43,18 @@ TBD
 [appveyor-badge]: https://img.shields.io/appveyor/ci/RocketSurgeonsGuild/app-metrics-extensions.svg?color=00b3e0&label=appveyor&logo=appveyor&logoColor=00b3e0&style=flat "AppVeyor Status"
 [appveyor-history]: https://ci.appveyor.com/project/RocketSurgeonsGuild/app-metrics-extensions/history
 [appveyor-history-badge]: https://buildstats.info/appveyor/chart/RocketSurgeonsGuild/app-metrics-extensions?includeBuildsFromPullRequest=false "AppVeyor History"
-[nuget-ewtvnq6vlt5g]: https://www.nuget.org/packages/Rocket.Surgery.Extensions.Metrics/
-[nuget-version-ewtvnq6vlt5g-badge]: https://img.shields.io/nuget/v/Rocket.Surgery.Extensions.Metrics.svg?color=004880&logo=nuget&style=flat-square "NuGet Version"
-[nuget-downloads-ewtvnq6vlt5g-badge]: https://img.shields.io/nuget/dt/Rocket.Surgery.Extensions.Metrics.svg?color=004880&logo=nuget&style=flat-square "NuGet Downloads"
-[myget-ewtvnq6vlt5g]: https://www.myget.org/feed/rocket-surgeons-guild/package/nuget/Rocket.Surgery.Extensions.Metrics
-[myget-version-ewtvnq6vlt5g-badge]: https://img.shields.io/myget/rocket-surgeons-guild/vpre/Rocket.Surgery.Extensions.Metrics.svg?label=myget&color=004880&logo=nuget&style=flat-square "MyGet Pre-Release Version"
-[myget-downloads-ewtvnq6vlt5g-badge]: https://img.shields.io/myget/rocket-surgeons-guild/dt/Rocket.Surgery.Extensions.Metrics.svg?color=004880&logo=nuget&style=flat-square "MyGet Downloads"
-[nuget-ut3vyzbrdryg]: https://www.nuget.org/packages/Rocket.Surgery.Extensions.Metrics.Abstractions/
-[nuget-version-ut3vyzbrdryg-badge]: https://img.shields.io/nuget/v/Rocket.Surgery.Extensions.Metrics.Abstractions.svg?color=004880&logo=nuget&style=flat-square "NuGet Version"
-[nuget-downloads-ut3vyzbrdryg-badge]: https://img.shields.io/nuget/dt/Rocket.Surgery.Extensions.Metrics.Abstractions.svg?color=004880&logo=nuget&style=flat-square "NuGet Downloads"
-[myget-ut3vyzbrdryg]: https://www.myget.org/feed/rocket-surgeons-guild/package/nuget/Rocket.Surgery.Extensions.Metrics.Abstractions
-[myget-version-ut3vyzbrdryg-badge]: https://img.shields.io/myget/rocket-surgeons-guild/vpre/Rocket.Surgery.Extensions.Metrics.Abstractions.svg?label=myget&color=004880&logo=nuget&style=flat-square "MyGet Pre-Release Version"
-[myget-downloads-ut3vyzbrdryg-badge]: https://img.shields.io/myget/rocket-surgeons-guild/dt/Rocket.Surgery.Extensions.Metrics.Abstractions.svg?color=004880&logo=nuget&style=flat-square "MyGet Downloads"
+[nuget-yrg0nzmlxavw]: https://www.nuget.org/packages/Rocket.Surgery.Extensions.Metrics/
+[nuget-version-yrg0nzmlxavw-badge]: https://img.shields.io/nuget/v/Rocket.Surgery.Extensions.Metrics.svg?color=004880&logo=nuget&style=flat-square "NuGet Version"
+[nuget-downloads-yrg0nzmlxavw-badge]: https://img.shields.io/nuget/dt/Rocket.Surgery.Extensions.Metrics.svg?color=004880&logo=nuget&style=flat-square "NuGet Downloads"
+[nuget-r1ged833znfa]: https://www.nuget.org/packages/Rocket.Surgery.Extensions.Metrics.Abstractions/
+[nuget-version-r1ged833znfa-badge]: https://img.shields.io/nuget/v/Rocket.Surgery.Extensions.Metrics.Abstractions.svg?color=004880&logo=nuget&style=flat-square "NuGet Version"
+[nuget-downloads-r1ged833znfa-badge]: https://img.shields.io/nuget/dt/Rocket.Surgery.Extensions.Metrics.Abstractions.svg?color=004880&logo=nuget&style=flat-square "NuGet Downloads"
+[nuget-onxf9zmkj7sg]: https://www.nuget.org/packages/Rocket.Surgery.AspNetCore.Metrics/
+[nuget-version-onxf9zmkj7sg-badge]: https://img.shields.io/nuget/v/Rocket.Surgery.AspNetCore.Metrics.svg?color=004880&logo=nuget&style=flat-square "NuGet Version"
+[nuget-downloads-onxf9zmkj7sg-badge]: https://img.shields.io/nuget/dt/Rocket.Surgery.AspNetCore.Metrics.svg?color=004880&logo=nuget&style=flat-square "NuGet Downloads"
+[nuget-2im+0m81ffmw]: https://www.nuget.org/packages/Rocket.Surgery.Hosting.Metrics/
+[nuget-version-2im+0m81ffmw-badge]: https://img.shields.io/nuget/v/Rocket.Surgery.Hosting.Metrics.svg?color=004880&logo=nuget&style=flat-square "NuGet Version"
+[nuget-downloads-2im+0m81ffmw-badge]: https://img.shields.io/nuget/dt/Rocket.Surgery.Hosting.Metrics.svg?color=004880&logo=nuget&style=flat-square "NuGet Downloads"
 <!-- generated references -->
 
 <!-- nuke-data
@@ -64,6 +68,4 @@ azurepipelines:
 appveyor:
   account: RocketSurgeonsGuild
   build: app-metrics-extensions
-myget:
-  account: rocket-surgeons-guild
 -->
