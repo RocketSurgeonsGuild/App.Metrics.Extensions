@@ -5,6 +5,6 @@
   <ItemGroup>
     <PackageReference Include="Rocket.Surgery.Conventions" />
     <ProjectReference Include="../Metrics.Conventions.Abstractions/Rocket.Surgery.Conventions.Metrics.Abstractions.csproj" />
-    <ProjectReference Include="../Metrics.Extensions/Rocket.Surgery.Extensions.Metrics.Extensions.csproj" />
+    <ProjectReference Include="../Metrics.Extensions/Rocket.Surgery.Extensions.Metrics.csproj" />
   </ItemGroup>
 </Project>
