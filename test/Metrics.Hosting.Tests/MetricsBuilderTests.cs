@@ -1,4 +1,5 @@
 using System;
+using System.Reactive.Disposables;
 using System.Reflection;
 using FakeItEasy;
 using FluentAssertions;
@@ -29,8 +30,8 @@ namespace Rocket.Surgery.Metrics.Hosting.Tests
             a.Should().NotThrow();
         }
 
-        public MetricsBuilderTests(ITestOutputHelper outputHelper) : base(outputHelper) => Disposable.Add(
-            System.Reactive.Disposables.Disposable.Create(
+        public MetricsBuilderTests(ITestOutputHelper outputHelper) : base(outputHelper) => Disposables.Add(
+            Disposable.Create(
                 () => typeof(MetricsConfigureHostBuilderExtensions).GetField(
                     "_metricsBuilt",
                     BindingFlags.Static | BindingFlags.NonPublic

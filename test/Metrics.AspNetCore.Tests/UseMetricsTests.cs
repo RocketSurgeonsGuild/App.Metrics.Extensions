@@ -1,4 +1,5 @@
 using System;
+using System.Reactive.Disposables;
 using System.Reflection;
 using App.Metrics;
 using FluentAssertions;
@@ -52,8 +53,8 @@ namespace Rocket.Surgery.Metrics.AspNetCore.Tests
             host.Services.GetService<IMetrics>().Should().NotBeNull();
         }
 
-        public UseMetricsTests(ITestOutputHelper outputHelper) : base(outputHelper, LogLevel.Trace) => Disposable.Add(
-            System.Reactive.Disposables.Disposable.Create(
+        public UseMetricsTests(ITestOutputHelper outputHelper) : base(outputHelper, LogLevel.Trace) => Disposables.Add(
+            Disposable.Create(
                 () => typeof(MetricsAspNetWebHostBuilderExtensions).GetField(
                     "_metricsBuilt",
                     BindingFlags.Static | BindingFlags.NonPublic
