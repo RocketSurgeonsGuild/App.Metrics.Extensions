@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Rocket.Surgery.Conventions;
 using Rocket.Surgery.Conventions.Reflection;
@@ -51,7 +52,7 @@ namespace Rocket.Surgery.Extensions.Metrics
             IAssemblyProvider assemblyProvider,
             IAssemblyCandidateFinder assemblyCandidateFinder,
             IAppMetricsBuilder appMetricsBuilder,
-            IRocketEnvironment environment,
+            IHostEnvironment environment,
             IConfiguration configuration,
             ILogger diagnosticSource,
             IDictionary<object, object?> properties
@@ -96,6 +97,6 @@ namespace Rocket.Surgery.Extensions.Metrics
         /// Based on IHostEnvironment / IHostingEnvironment
         /// </summary>
         /// <value>The environment.</value>
-        public IRocketEnvironment Environment { get; }
+        public IHostEnvironment Environment { get; }
     }
 }
