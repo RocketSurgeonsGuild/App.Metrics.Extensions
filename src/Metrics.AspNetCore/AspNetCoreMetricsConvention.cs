@@ -1,13 +1,12 @@
 using System;
 using App.Metrics;
-using App.Metrics.AspNetCore;
 using JetBrains.Annotations;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Rocket.Surgery.AspNetCore.Metrics;
 using Rocket.Surgery.Conventions;
-using Rocket.Surgery.Conventions.Scanners;
+using Rocket.Surgery.Conventions.Reflection;
 using Rocket.Surgery.Extensions.Metrics;
 using Rocket.Surgery.Hosting;
 using MetricsBuilder = Rocket.Surgery.Extensions.Metrics.MetricsBuilder;
@@ -55,8 +54,8 @@ namespace Rocket.Surgery.AspNetCore.Metrics
             {
                 context.Builder.ConfigureMetricsWithDefaults((ctx, builder) =>
                 {
-                    new MetricsBuilder(_scanner, context.AssemblyProvider, context.AssemblyCandidateFinder,
-                        builder, ctx.HostingEnvironment.Convert(), ctx.Configuration, _diagnosticSource,
+                    new MetricsBuilder(_scanner, context.Get<IAssemblyProvider>(), context.Get<IAssemblyCandidateFinder>(),
+                        builder, ctx.HostingEnvironment, ctx.Configuration, _diagnosticSource,
                         context.Properties).Build();
                 });
             }
@@ -64,8 +63,8 @@ namespace Rocket.Surgery.AspNetCore.Metrics
             {
                 context.Builder.ConfigureMetrics((ctx, builder) =>
                 {
-                    new MetricsBuilder(_scanner, context.AssemblyProvider, context.AssemblyCandidateFinder,
-                        builder, ctx.HostingEnvironment.Convert(), ctx.Configuration, _diagnosticSource,
+                    new MetricsBuilder(_scanner, context.Get<IAssemblyProvider>(), context.Get<IAssemblyCandidateFinder>(),
+                        builder, ctx.HostingEnvironment, ctx.Configuration, _diagnosticSource,
                         context.Properties).Build();
                 });
             }
