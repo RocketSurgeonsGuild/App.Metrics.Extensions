@@ -1,5 +1,6 @@
 using JetBrains.Annotations;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 using Rocket.Surgery.Conventions;
 using Rocket.Surgery.Conventions.Reflection;
 using IAppMetricsBuilder = App.Metrics.IMetricsBuilder;
@@ -13,20 +14,6 @@ namespace Rocket.Surgery.Extensions.Metrics
     /// <seealso cref="IConventionContext" />
     public interface IMetricsConventionContext : IConventionContext
     {
-        /// <summary>
-        /// Gets the assembly provider.
-        /// </summary>
-        /// <value>The assembly provider.</value>
-        [NotNull]
-        IAssemblyProvider AssemblyProvider { get; }
-
-        /// <summary>
-        /// Gets the assembly candidate finder.
-        /// </summary>
-        /// <value>The assembly candidate finder.</value>
-        [NotNull]
-        IAssemblyCandidateFinder AssemblyCandidateFinder { get; }
-
         /// <summary>
         /// Gets the configuration.
         /// </summary>
@@ -47,6 +34,6 @@ namespace Rocket.Surgery.Extensions.Metrics
         /// </summary>
         /// <value>The environment.</value>
         [NotNull]
-        IRocketEnvironment Environment { get; }
+        IHostEnvironment Environment { get; }
     }
 }

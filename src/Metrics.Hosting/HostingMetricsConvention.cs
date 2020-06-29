@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Rocket.Surgery.Conventions;
+using Rocket.Surgery.Conventions.Reflection;
 using Rocket.Surgery.Conventions.Scanners;
 using Rocket.Surgery.Extensions.Metrics;
 using Rocket.Surgery.Hosting.Metrics;
@@ -52,8 +53,8 @@ namespace Rocket.Surgery.Hosting.Metrics
             {
                 context.Builder.ConfigureMetricsWithDefaults((ctx, builder) =>
                 {
-                    new MetricsBuilder(_scanner, context.AssemblyProvider, context.AssemblyCandidateFinder,
-                        builder, ctx.HostingEnvironment.Convert(), ctx.Configuration, _diagnosticSource,
+                    new MetricsBuilder(_scanner, context.Get<IAssemblyProvider>(), context.Get<IAssemblyCandidateFinder>(),
+                        builder, ctx.HostingEnvironment, ctx.Configuration, _diagnosticSource,
                         context.Properties).Build();
                 });
             }
@@ -61,8 +62,8 @@ namespace Rocket.Surgery.Hosting.Metrics
             {
                 context.Builder.ConfigureMetrics((ctx, builder) =>
                 {
-                    new MetricsBuilder(_scanner, context.AssemblyProvider, context.AssemblyCandidateFinder,
-                        builder, ctx.HostingEnvironment.Convert(), ctx.Configuration, _diagnosticSource,
+                    new MetricsBuilder(_scanner, context.Get<IAssemblyProvider>(), context.Get<IAssemblyCandidateFinder>(),
+                        builder, ctx.HostingEnvironment, ctx.Configuration, _diagnosticSource,
                         context.Properties).Build();
                 });
             }

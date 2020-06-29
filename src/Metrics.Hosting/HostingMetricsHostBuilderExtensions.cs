@@ -1,6 +1,7 @@
 using System;
 using App.Metrics;
 using JetBrains.Annotations;
+using Microsoft.Extensions.Hosting;
 using Rocket.Surgery.Conventions;
 using Rocket.Surgery.Extensions.Metrics;
 using Rocket.Surgery.Hosting.Metrics;
@@ -20,6 +21,21 @@ namespace Rocket.Surgery.Conventions
         /// Uses the application metrics.
         /// </summary>
         /// <param name="container">The container.</param>
+        /// <returns>IHostBuilder.</returns>
+        public static IHostBuilder ConfigureMetrics([NotNull] this IHostBuilder container)
+        {
+            if (container == null)
+            {
+                throw new ArgumentNullException(nameof(container));
+            }
+
+            container.GetConventions().UseMetrics();
+            return container;
+        }
+        /// <summary>
+        /// Uses the application metrics.
+        /// </summary>
+        /// <param name="container">The container.</param>
         /// <returns>IConventionHostBuilder.</returns>
         public static IConventionHostBuilder UseMetrics(
             [NotNull] this IConventionHostBuilder container)
@@ -34,6 +50,21 @@ namespace Rocket.Surgery.Conventions
             return container;
         }
 
+        /// <summary>
+        /// Uses the default application metrics.
+        /// </summary>
+        /// <param name="container">The container.</param>
+        /// <returns>IHostBuilder.</returns>
+        public static IHostBuilder UseMetricsWithDefaults([NotNull] this IHostBuilder container)
+        {
+            if (container == null)
+            {
+                throw new ArgumentNullException(nameof(container));
+            }
+
+            container.GetConventions().UseMetricsWithDefaults();
+            return container;
+        }
         /// <summary>
         /// Uses the default application metrics.
         /// </summary>
