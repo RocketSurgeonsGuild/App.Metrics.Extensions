@@ -26,7 +26,7 @@
     <PackageReference Update="App.Metrics.AspNetCore" Version="4.1.0" />
     <PackageReference Update="App.Metrics.Extensions.HealthChecks" Version="4.1.0" />
     <PackageReference Update="Rocket.Surgery.Conventions" Version="10.0.0-beta.44" />
-    <PackageReference Update="Rocket.Surgery.Conventions.Abstractions" Version="10.0.0-beta.44" />
+    <PackageReference Update="Rocket.Surgery.Conventions.Abstractions" Version="10.0.0-beta.53" />
     <PackageReference Update="Rocket.Surgery.Hosting" Version="10.0.0-beta.44" />
     <PackageReference Update="Rocket.Surgery.Hosting.Abstractions" Version="10.0.0-beta.44" />
   </ItemGroup>
